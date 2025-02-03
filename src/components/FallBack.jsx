@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const FallBack = () => {
-  return (
-    <h1 style={{background: "red"}}>
-        FALL BACK FOR ERROR
-    </h1>
-  )
-}
+const FallBack = ({ errorInfo }) => {
+    const navigate = useNavigate();
 
-export default FallBack
+    const handleNavigate = () => {
+        navigate("/");
+        window.location.reload();
+    };
+
+    return (
+        <h1 style={{ color: "red" }}>
+            FALL BACK FOR ERROR
+            <h6>ERROR INFO: {errorInfo}</h6>
+            <button onClick={handleNavigate}>GO TO HOME</button>
+        </h1>
+    );
+};
+
+export default FallBack;

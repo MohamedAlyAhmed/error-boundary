@@ -4,7 +4,6 @@ const FailedComponent = () => {
     const arr = undefined;
     const handleError =() => {
         throw new Error('FailedComponent error');
-  
     }
   return (
     <div>

@@ -1,4 +1,5 @@
 import React from "react";
+import FallBack from "./FallBack";
 
 class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class ErrorBoundary extends React.Component {
       console.log("error in render", hasError)
       if (hasError) {
         // You can render any custom fallback UI
-        return <h1>Something went wrong. {errorInfo}</h1>;
+        return <FallBack errorInfo={errorInfo} />;
       }
   
       return this.props.children;
